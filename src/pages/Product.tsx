@@ -8,13 +8,13 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-import type { Product } from "@/lib/interfaces";
+import type { Product as  ProductI} from "@/lib/interfaces";
 import { Rating, RatingButton } from "@/components/ui/shadcn-io/rating";
 import { RecomendedProducts } from "@/components/RecomendedProducts";
 import { Separator } from "@/components/ui/separator";
 function Product() {
   const { id } = useParams();
-  const [product, setProduct] = useState<Product>();
+  const [product, setProduct] = useState<ProductI>();
 
   useEffect(() => {
     if (id) {
