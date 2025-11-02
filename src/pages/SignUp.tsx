@@ -5,12 +5,15 @@ function SignUp() {
         navigate('/login');
     }
   return (
-    <div>Sign Up Page
+    <div>
+      <h3>Sign Up Page</h3>
+      <div>
         <button onClick={()=>{
             navigateToLogin();
 
-        }}>Signup</button>
-        <button>Login</button>
+        }}>Signup</button></div>
+        <div>
+        <button>Login</button></div>
     </div>
 
   )
