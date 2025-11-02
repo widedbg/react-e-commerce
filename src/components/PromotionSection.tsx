@@ -33,7 +33,7 @@ export function PromotionSection() {
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
-                <CardContent className="flex flex-col md:flex-row gap-5 aspect-16/4   ">
+                <CardContent className="flex flex-col lg:flex-row gap-5 aspect-16/4   ">
                   <img src={prod.image} className="rounded-2xl shadow"/>
                   <div className="flex flex-col gap-3">
                     <h3 className="text-3xl font-bold text-primary">{prod.name}</h3>

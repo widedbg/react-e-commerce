@@ -22,6 +22,7 @@ import { cn } from "@/lib/utils";
 import type { ComponentProps } from "react";
 import { Link, Links, useNavigate } from "react-router-dom";
 import { categories } from "@/dev-data";
+import { ModeToggle } from "@/components/Toggleode";
 
 
 
@@ -371,6 +372,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
           </div>
           {/* Right side */}
           <div className="flex items-center gap-3">
+            <ModeToggle/>
             <Button
               variant="ghost"
               size="sm"

@@ -30,7 +30,7 @@ function Product() {
 
   return (
     <div className="bg-muted flex justify-center min-h-screen w-full p-1 sm:p-6">
-      <div className=" w-full sm:w-[80%] bg-white p-2 sm:p-6 rounded-xl ">
+      <div className=" w-full sm:w-[80%] bg-white dark:bg-dark p-2 sm:p-6 rounded-xl ">
         <div className="flex  flex-col sm:flex-row gap-3 sm:gap-6  ">
           <div>
             <Carousel>

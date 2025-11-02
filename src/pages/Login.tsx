@@ -1,18 +1,11 @@
-import { useNavigate } from "react-router-dom";
-function Login() {
-    const navigate = useNavigate();
-    function navigateToSignup(){
-        navigate('/sign-up');
-    }
+import { LoginForm } from "@/components/LoginForm";
+
+export default function Login() {
   return (
-    <div>Login Page
-        <button onClick={()=>{
-            navigateToSignup();
-
-        }}>Login</button>
-        <button>Signup</button>
+    <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">
+      <div className="w-full max-w-[450px]">
+        <LoginForm/>
+      </div>
     </div>
-
-  )
+  );
 }
-export default Login;

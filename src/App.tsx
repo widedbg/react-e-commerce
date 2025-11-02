@@ -6,20 +6,24 @@ import Product from "./pages/Product";
 import { Products } from "./pages/Products";
 import NavBar from "./components/NavBar";
 import { ProductCategorie } from "./components/ProductsCategorie";
-
+import { ThemeProvider } from "./providers/theme-provider";
+import { Toaster } from "sonner";
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/products/:id" element={<Product />} />
-        <Route path="/products" element={<Products />}></Route>
-        <Route path="/categories/:category" element={<ProductCategorie />} />
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <NavBar />
+        <Toaster position="top-center" />
 
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/products/:id" element={<Product />} />
+          <Route path="/products" element={<Products />}></Route>
+          <Route path="/categories/:category" element={<ProductCategorie />} />
+        </Routes>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
