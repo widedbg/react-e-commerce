@@ -9,4 +9,6 @@ export interface Product {
     detailImages: string[];
     reviews:number;
     badges: string[];
+    quantity: number;
+    description : string;
 }

@@ -38,7 +38,7 @@ export function SignUpForm({
     },
   });
   function onSubmit(data: User) {
-    toast.success(`Welcome ${data.first_name} ${data.last_name} your account has been created succseful`)
+    toast.success(`Welcome ${data.first_name} ${data.last_name} !your account has been created successfully.`)
     form.reset({
     first_name: "",
       last_name: "",
@@ -75,7 +75,7 @@ export function SignUpForm({
                         {...field}
                         id="first_name"
                         type="text"
-                        placeholder="foulen"
+                        placeholder="Enter your first name"
                         aria-invalid={fieldState.invalid}
                       />
                       {fieldState.invalid && (
@@ -94,7 +94,7 @@ export function SignUpForm({
                         {...field}
                         id="last_name"
                         type="text"
-                        placeholder="foulen"
+                        placeholder="Enter your last name"
                         aria-invalid={fieldState.invalid}
                       />
                       {fieldState.invalid && (
@@ -114,7 +114,7 @@ export function SignUpForm({
                       {...field}
                       id="email"
                       type="email"
-                      placeholder="exemple@gmail.com"
+                      placeholder="example@gmail.com"
                       aria-invalid={fieldState.invalid}
                     />
                     {fieldState.invalid && (
@@ -133,6 +133,7 @@ export function SignUpForm({
                       {...field}
                       id="password"
                       type="password"
+                      placeholder="Enter your password"
                       aria-invalid={fieldState.invalid}
                     />
                     {fieldState.invalid && (
@@ -153,6 +154,7 @@ export function SignUpForm({
                       {...field}
                       id="Confirm_password"
                       type="password"
+                      placeholder="Confirm your password"
                       aria-invalid={fieldState.invalid}
                     />
                     {fieldState.invalid && (
@@ -171,7 +173,7 @@ export function SignUpForm({
                       {...field}
                       id="address"
                       type="text"
-                      placeholder="foulen"
+                      placeholder="Enter your address (e.g., 123 Main Street, Tunis)"
                       aria-invalid={fieldState.invalid}
                     />
                     {fieldState.invalid && (

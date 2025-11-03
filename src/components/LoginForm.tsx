@@ -20,10 +20,12 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginShema, type TLogin } from "@/lib/schemas";
 import { toast } from "sonner";
+import { useUsers } from "@/providers/users-provider";
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const {setUser} = useUsers();
   const navigate = useNavigate();
   const form = useForm<TLogin>({
     resolver: zodResolver(LoginShema),
@@ -34,11 +36,16 @@ export function LoginForm({
   });
   function onSubmit(data: TLogin) {
   toast.success(`Welcome ${data.email}! Your account has been logged in successfully.`);
-  form.reset({
-    email: "",
-    password: "",
+  setUser(data);
+  form.reset(
+    {
+      email:'',
+      password:'',
+
   });
-  navigate("/");
+ 
+  navigate('/');
+  
 }
 
     return (
@@ -63,7 +70,7 @@ export function LoginForm({
                         {...field}
                         id="email"
                         type="email"
-                        placeholder="exemple@gmail.com"
+                        placeholder="example@gmail.com"
                         aria-invalid={fieldState.invalid}
                       />
                       {fieldState.invalid && (
@@ -82,6 +89,7 @@ export function LoginForm({
                         {...field}
                         id="password"
                         type="password"
+                        placeholder="Enter your password"
                         aria-invalid={fieldState.invalid}
                       />
                       {fieldState.invalid && (

@@ -13,7 +13,9 @@ export const products = [
       "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 32,
+    description: "Powerful 27-inch iMac with stunning 5K Retina display and blazing M3 Max performance for creators."
   },
   {
     id: 2,
@@ -29,7 +31,9 @@ export const products = [
       "https://images.unsplash.com/photo-1540829917886-91ab031b1764?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Free Shipping"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 120,
+    description: "Flagship iPhone with Blue Titanium finish, pro camera system and A17 performance."
   },
   {
     id: 3,
@@ -45,7 +49,9 @@ export const products = [
       "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Shipping Today", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 58,
+    description: "Ultra-fast iPad Pro with 12.9-inch Liquid Retina XDR display and desktop-class performance."
   },
   {
     id: 4,
@@ -61,7 +67,9 @@ export const products = [
       "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 25,
+    description: "High-end 16-inch MacBook Pro with M3 Max chip for extreme workflows and graphics."
   },
   {
     id: 5,
@@ -77,7 +85,9 @@ export const products = [
       "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Fast Delivery"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 310,
+    description: "Active noise cancellation earbuds with improved transparency mode and MagSafe charging."
   },
   {
     id: 6,
@@ -93,7 +103,9 @@ export const products = [
       "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 74,
+    description: "Series 9 Apple Watch with brighter display, powerful S9 chip and advanced health tracking."
   },
   {
     id: 7,
@@ -109,7 +121,9 @@ export const products = [
       "https://images.unsplash.com/photo-1545127398-14699f92334b?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Shipping Today", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 120,
+    description: "Compact 4K HDR streaming hub with Ethernet and cinematic Dolby Vision support."
   },
   {
     id: 8,
@@ -125,7 +139,9 @@ export const products = [
       "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Free Shipping"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 210,
+    description: "Wireless Magic Keyboard with Touch ID for secure logins and fluid typing comfort."
   },
   {
     id: 9,
@@ -141,7 +157,9 @@ export const products = [
       "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Fast Delivery"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 95,
+    description: "Industry-leading noise cancelling headphones with refined comfort and immersive audio."
   },
   {
     id: 10,
@@ -157,7 +175,9 @@ export const products = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Shipping Today", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 14,
+    description: "Large 75-inch Neo QLED TV delivering ultra-bright HDR picture and smart entertainment apps."
   },
   {
     id: 11,
@@ -173,7 +193,9 @@ export const products = [
       "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=600&fit=crop&crop=center" // gaming setup
     ],
     badges: ["Best Seller", "Fast Delivery"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 62,
+    description: "Next‑gen Xbox Series X with true 4K gaming, fast load times and expansive storage."
   },
   {
     id: 12,
@@ -189,7 +211,9 @@ export const products = [
       "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=600&h=600&fit=crop&crop=center" // accessories layout
     ],
     badges: ["Best Seller", "Fast Delivery"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 134,
+    description: "Portable Switch OLED with vibrant screen and versatile docked or handheld play."
   },
   {
     id: 13,
@@ -205,7 +229,9 @@ export const products = [
       "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Shipping Today", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 46,
+    description: "Slim Galaxy Tab S9 with vivid AMOLED display and enhanced S Pen productivity."
   },
   {
     id: 14,
@@ -221,7 +247,9 @@ export const products = [
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=600&fit=crop&crop=center" // alternate angle
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 27,
+    description: "True 5K 27-inch Retina display with studio-quality camera and immersive speakers."
   },
   {
     id: 15,
@@ -237,7 +265,9 @@ export const products = [
       "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 52,
+    description: "Convertible Spectre x360 with premium build, OLED options and long battery life."
   },
   {
     id: 16,
@@ -253,7 +283,9 @@ export const products = [
       "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Fast Delivery"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 88,
+    description: "Classic Galaxy Watch 6 blending timeless design with advanced health and fitness tracking."
   },
   {
     id: 17,
@@ -269,7 +301,9 @@ export const products = [
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=600&fit=crop&crop=center" // desk context
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 39,
+    description: "Compact Mac Mini powered by M2 Pro chip for multitasking and pro media workflows."
   },
   {
     id: 18,
@@ -285,7 +319,9 @@ export const products = [
       "https://images.unsplash.com/photo-1540829917886-91ab031b1764?w=600&h=600&fit=crop&crop=center" // alternate
     ],
     badges: ["Best Seller", "Free Shipping"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 75,
+    description: "AI-powered Pixel 8 Pro with advanced camera features and crisp 120Hz display."
   },
   {
     id: 19,
@@ -301,7 +337,9 @@ export const products = [
       "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Fast Delivery", "Best Price"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 41,
+    description: "Elegant Surface Laptop 5 with PixelSense touchscreen and premium aluminum design."
   },
   {
     id: 20,
@@ -317,7 +355,9 @@ export const products = [
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Free Shipping"],
-    category: "Electronics"
+    category: "Electronics",
+    quantity: 28,
+    description: "Ultra-portable XPS 13 Plus with edge-to-edge keyboard and powerful 13th‑gen performance."
   },
   {
     id: 21,
@@ -333,7 +373,9 @@ export const products = [
       "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&h=600&fit=crop&crop=center" // accessory kit
     ],
     badges: ["Professional", "Fast Delivery"],
-    category: "Photography"
+    category: "Photography",
+    quantity: 12,
+    description: "High-resolution EOS R5 with 8K video capabilities and lightning-fast autofocus."
   },
   {
     id: 22,
@@ -349,7 +391,9 @@ export const products = [
       "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Best Seller", "Noise Cancelling"],
-    category: "Audio"
+    category: "Audio",
+    quantity: 180,
+    description: "Comfortable over-ear Bose headphones with legendary noise cancellation and long battery life."
   },
   {
     id: 23,
@@ -365,7 +409,9 @@ export const products = [
       "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Gaming", "OLED Display"],
-    category: "Gaming"
+    category: "Gaming",
+    quantity: 99,
+    description: "Switch OLED console offering crisp portable gaming and vivid docked TV experiences."
   },
   {
     id: 26,
@@ -381,7 +427,9 @@ export const products = [
       "https://images.unsplash.com/photo-1549497538-303791108f95?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Ergonomic", "Professional"],
-    category: "Furniture"
+    category: "Furniture",
+    quantity: 18,
+    description: "Iconic Aeron chair with breathable mesh and adaptive ergonomic support for long workdays."
   },
   {
     id: 27,
@@ -397,7 +445,9 @@ export const products = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["4K Camera", "Lightweight"],
-    category: "Photography"
+    category: "Photography",
+    quantity: 43,
+    description: "Portable Mini 3 Pro drone with 4K stabilized camera for cinematic aerial shots."
   },
   {
     id: 30,
@@ -413,7 +463,9 @@ export const products = [
       "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&h=600&fit=crop&crop=center"
     ],
     badges: ["Luxury", "Swiss Made"],
-    category: "Watches"
+    category: "Watches",
+    quantity: 5,
+    description: "Prestigious Rolex Submariner with classic dive heritage and timeless Swiss craftsmanship."
   }
 ];
 

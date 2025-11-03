@@ -2,7 +2,12 @@
 
 import * as React from "react";
 import { useEffect, useState, useRef } from "react";
-import { BookOpenIcon, InfoIcon, LifeBuoyIcon } from "lucide-react";
+import {
+  BookOpenIcon,
+  InfoIcon,
+  LifeBuoyIcon,
+  ShoppingCart,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -23,8 +28,17 @@ import type { ComponentProps } from "react";
 import { Link, Links, useNavigate } from "react-router-dom";
 import { categories } from "@/dev-data";
 import { ModeToggle } from "@/components/Toggleode";
-
-
+import { useUsers } from "@/providers/users-provider";
+import { Avatar, AvatarFallback, AvatarImage } from "../../avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "../../dropdown-menu";
+import { toast } from "sonner";
+import { Badge } from "../../badge";
+import { useCart } from "@/providers/cart-provider";
 
 // Hamburger icon component
 const HamburgerIcon = ({
@@ -74,7 +88,6 @@ export interface Navbar02NavItem {
 }
 
 export interface Navbar02Props extends React.HTMLAttributes<HTMLElement> {
-
   navigationLinks?: Navbar02NavItem[];
   signInText?: string;
   signInHref?: string;
@@ -104,7 +117,7 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
   (
     {
       className,
-     
+
       navigationLinks = defaultNavigationLinks,
       signInText = "Sign UP",
       signInHref = "#signun",
@@ -120,6 +133,14 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
     const containerRef = useRef<HTMLElement>(null);
     const navigate = useNavigate();
 
+    const { user, setUser } = useUsers();
+    const { cart } = useCart();
+    function LogOut() {
+      setUser(null);
+      localStorage.removeItem("user-data");
+      toast.info("Bye, Bye");
+      navigate("/login");
+    }
     useEffect(() => {
       const checkWidth = () => {
         if (containerRef.current) {
@@ -264,7 +285,6 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
             )}
             {/* Main nav */}
             <div className="flex items-center gap-6">
-              
               {/* Navigation menu */}
               {!isMobile && (
                 <NavigationMenu className="flex">
@@ -372,28 +392,57 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
           </div>
           {/* Right side */}
           <div className="flex items-center gap-3">
-            <ModeToggle/>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-sm font-medium hover:bg-accent hover:text-accent-foreground"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/sign-up");
-              }}
-            >
-              {signInText}
-            </Button>
-            <Button
-              size="sm"
-              className="text-sm font-medium px-4 h-9 rounded-md shadow-sm"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate("/login");
-              }}
-            >
-              {ctaText}
-            </Button>
+            <ModeToggle />
+            <div className="relative">
+              <Button onClick={()=> navigate('/checkout')}
+                variant="secondary"
+                size={"icon"}
+                className="rounded-full"
+              >
+                <ShoppingCart></ShoppingCart>
+              </Button>
+              <Badge className="absolute top-[-6px] right-[-6px] h-4 min-w-4 rounded-full px-1 flex items-center justify-center text-[10px]">
+                {cart.length}
+              </Badge>
+            </div>
+            {user?.email ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Avatar className="cursor-pointer">
+                    <AvatarFallback className="uppercase">
+                      {user?.email.slice(0, 1)}
+                    </AvatarFallback>
+                  </Avatar>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onClick={LogOut}>Log Out</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/sign-up");
+                  }}
+                >
+                  {signInText}
+                </Button>
+                <Button
+                  size="sm"
+                  className="text-sm font-medium px-4 h-9 rounded-md shadow-sm"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/login");
+                  }}
+                >
+                  {ctaText}
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -469,4 +518,4 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-export {  HamburgerIcon };
+export { HamburgerIcon };

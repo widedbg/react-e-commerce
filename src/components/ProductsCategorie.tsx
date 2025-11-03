@@ -69,7 +69,7 @@ export function ProductCategorie() {
   return (
     <div>
       <div className="bg-muted flex justify-center min-h-screen w-full p-1 sm:p-6">
-        <div className=" w-full sm:w-[80%] bg-white p-2 sm:p-6 rounded-xl ">
+        <div className=" w-full sm:w-[80%] bg-white dark:bg-black p-2 sm:p-6 rounded-xl ">
           {/*filter section*/}
           <div className="flex justify-end gap-3">
             <Dialog>

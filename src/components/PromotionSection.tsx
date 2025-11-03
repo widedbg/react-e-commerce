@@ -29,7 +29,7 @@ export function PromotionSection() {
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent >
-        {products.slice().map((prod, index) => (
+        {products.slice(0,5).map((prod, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>

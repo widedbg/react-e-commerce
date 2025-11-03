@@ -12,10 +12,21 @@ import type { Product as  ProductI} from "@/lib/interfaces";
 import { Rating, RatingButton } from "@/components/ui/shadcn-io/rating";
 import { RecomendedProducts } from "@/components/RecomendedProducts";
 import { Separator } from "@/components/ui/separator";
+import { Input } from "@/components/ui/input";
+
+import { useCart } from "@/providers/cart-provider";
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductI>();
-
+  const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+  const {addToCart} =useCart();
+  function AddNewItemToCart(){
+    const data = {
+      id: Number(id),
+      quantity: selectedQuantity
+    };
+    addToCart(data);
+  }
   useEffect(() => {
     if (id) {
       const foundProduct = products.find((prod) => {
@@ -30,7 +41,7 @@ function Product() {
 
   return (
     <div className="bg-muted flex justify-center min-h-screen w-full p-1 sm:p-6">
-      <div className=" w-full sm:w-[80%] bg-white dark:bg-dark p-2 sm:p-6 rounded-xl ">
+      <div className=" w-full sm:w-[80%] bg-white dark:bg-black p-2 sm:p-6 rounded-xl ">
         <div className="flex  flex-col sm:flex-row gap-3 sm:gap-6  ">
           <div>
             <Carousel>
@@ -68,7 +79,8 @@ function Product() {
                 <Badge>{b}</Badge>
               ))}
             </div>
-            <Button className="max-w-xs">Add to cart</Button>
+            <Input value={selectedQuantity} onChange={(event)=> setSelectedQuantity(Number(event.target.value))}type="number"step={1}/>
+            <Button className="max-w-xs" onClick={AddNewItemToCart}>Add to cart</Button>
             <p className="text-foreground font-medium hidden md:block">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

@@ -8,10 +8,15 @@ import NavBar from "./components/NavBar";
 import { ProductCategorie } from "./components/ProductsCategorie";
 import { ThemeProvider } from "./providers/theme-provider";
 import { Toaster } from "sonner";
+import { UserProvider } from "./providers/users-provider";
+import { CartProvider } from "./providers/cart-provider";
+import { Checkout } from "./pages/checkout";
 function App() {
   return (
     <BrowserRouter>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <UserProvider>
+          <CartProvider>
         <NavBar />
         <Toaster position="top-center" />
 
@@ -22,7 +27,11 @@ function App() {
           <Route path="/products/:id" element={<Product />} />
           <Route path="/products" element={<Products />}></Route>
           <Route path="/categories/:category" element={<ProductCategorie />} />
+          <Route path="/checkout" element={<Checkout/>} />
+          
         </Routes>
+      </CartProvider>
+      </UserProvider>
       </ThemeProvider>
     </BrowserRouter>
   );
