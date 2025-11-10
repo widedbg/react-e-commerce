@@ -8,24 +8,29 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
-import type { Product as  ProductI} from "@/lib/interfaces";
+import type { Product as ProductI } from "@/lib/interfaces";
 import { Rating, RatingButton } from "@/components/ui/shadcn-io/rating";
 import { RecomendedProducts } from "@/components/RecomendedProducts";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 
 import { useCart } from "@/providers/cart-provider";
+import { toast } from "sonner";
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductI>();
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
-  const {addToCart} =useCart();
-  function AddNewItemToCart(){
+  const { addToCart } = useCart();
+  function AddNewItemToCart() {
     const data = {
       id: Number(id),
-      quantity: selectedQuantity
+      quantity: selectedQuantity,
     };
     addToCart(data);
+    toast.success(`Product added to your cart!`, {
+    description: "You can view your cart or continue shopping.",
+    duration: 3000, 
+    });
   }
   useEffect(() => {
     if (id) {
@@ -64,37 +69,45 @@ function Product() {
               {product?.price} TND{" "}
               <span className="text-primary">({product?.discount})</span>
             </span>
-            
-              <div className="flex  items-center gap-3">
-                <Rating value={product?.rating} readOnly>
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <RatingButton className="text-yellow-500" key={index} />
-                  ))}
-                </Rating>
-                <span className="font-bold">{product?.reviews} Reviews</span>
-              </div>
-           
+
+            <div className="flex  items-center gap-3">
+              <Rating value={product?.rating} readOnly>
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <RatingButton className="text-yellow-500" key={index} />
+                ))}
+              </Rating>
+              <span className="font-bold">{product?.reviews} Reviews</span>
+            </div>
+
             <div className="flex gap-2">
               {product?.badges.map((b) => (
                 <Badge>{b}</Badge>
               ))}
             </div>
-            <Input value={selectedQuantity} onChange={(event)=> setSelectedQuantity(Number(event.target.value))}type="number"step={1}/>
-            <Button className="max-w-xs" onClick={AddNewItemToCart}>Add to cart</Button>
+            <span className=" font-bold text-xl">
+              Available item :{product?.quantity}
+            </span>
+            <Input
+              value={selectedQuantity}
+              max={product?.quantity}
+              min={1}
+              onChange={(event) =>
+                setSelectedQuantity(Number(event.target.value))
+              }
+              type="number"
+              step={1}
+            />
+            <Button className="max-w-xs" onClick={AddNewItemToCart}>
+              Add to cart
+            </Button>
             <p className="text-foreground font-medium hidden md:block">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {product?.description}
             </p>
           </div>
         </div>
         <Separator className="my-5 " />
         <h4 className="font-bold text-xl text-center">You might also like</h4>
-        <RecomendedProducts category={product?.category} id={id}/>
+        <RecomendedProducts category={product?.category} id={id} />
       </div>
     </div>
   );

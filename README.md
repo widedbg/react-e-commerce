@@ -1,73 +1,165 @@
-# React + TypeScript + Vite
+# E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, minimalistic, and fully responsive e-commerce web application built with **React + TypeScript**.
+Designed for demonstration purposes using **mockup data**, featuring product browsing, filtering, sorting, cart management, and user authentication.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Setup
 
-## React Compiler
+### 1. Install dependencies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Run the development server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+---
+
+## 🍽️ Technologies & Libraries
+
+* **TypeScript**: Type safety & fewer runtime errors
+* **Tailwind CSS**: Responsive design & utility-first styling
+* **Shadcn UI**: Reusable React components
+* **React Router DOM**: Navigation and routing
+* **React Hook Form**: Form state management
+* **React Context API**: Global state management
+* **Zod**: Form schema validation
+* **Embla Carousel Autoplay**: Product carousel with autoplay feature
+
+---
+
+## 📁 Folder Structure
+
+```
+src/
+  assets/             # Images, icons, and static assets
+  components/         # Shared UI components
+    ui/               # Shadcn UI components
+  pages/              # App pages (Home, Products, Login, etc.)
+  lib/                # Schemas, interfaces, utilities
+  providers/          # React Context providers (global states)
+  App.tsx             # Routing configuration
+  dev-data.ts         # Mockup data
+  main.tsx            # Entry point
+```
+
+---
+
+## 🎨 Features
+
+* **Homepage**
+
+  * Promotion carousel
+  * Recommended products section
+  * Categories overview
+
+* **Products Page**
+
+  * List of products with filtering (price, rating) and sorting
+  * Product cards with image, price, rating, discount
+
+* **Product Detail Page**
+
+  * Detailed product information
+  * Recommended products by category
+  * Add to cart functionality
+
+* **Cart & Checkout**
+
+  * Add/remove items
+  * Quantity management
+  * Checkout summary
+
+* **User Authentication**
+
+  * Login and signup forms with validation
+  * User state management via Context API
+
+* **Navigation & Responsiveness**
+
+  * Mobile-friendly hamburger menu
+  * Desktop multi-level navigation menu
+  * Cart badge with item count
+  * Fully responsive design
+
+
+
+---
+
+## 📦 Mock API / Data
+
+The app uses **mock data** from `dev-data.ts`:
+
+```ts
+export const products = [
+  {
+    id: 1,
+    name: "Apple iMac 27\"",
+    price: 1699,
+    discount: "Up to 35% off",
+    rating: 4,
+    category: "Electronics",
+    image: "/assets/imac.png",
+    badges: ["New", "Hot"]
+  },
+  // ...more products
+];
+
+export const categories = [
+  "Electronics",
+  "Clothing",
+  "Books",
+  "Toys",
+  "Accessories"
+];
+```
+
+> This allows testing UI & interactions without a backend.
+
+---
+
+## ⚙️ How to Use
+
+1. Clone the repository:
+
+```bash
+git clone <https://github.com/widedbg/react-e-commerce.git>
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser at `http://localhost:5173`.
+
+---
+
+## 🎟 Future Improvements
+
+* Backend integration for real products, users, and orders
+* Payment gateway integration (Stripe, PayPal)
+* Wishlist & user profile management
+* Enhanced animations & transitions for better UX
+
+
+---
+
+## 👨‍💼 Author
+
+**Your Name**
+Email: [widedbg23@gmail.com](mailto:widedbg23@gmail.com)
+GitHub: [github.com/widedbg](https://github.com/widedbg)

@@ -39,6 +39,7 @@ import {
 import { toast } from "sonner";
 import { Badge } from "../../badge";
 import { useCart } from "@/providers/cart-provider";
+import { SearchBar } from "@/components/SearchBar";
 
 // Hamburger icon component
 const HamburgerIcon = ({
@@ -100,7 +101,7 @@ export interface Navbar02Props extends React.HTMLAttributes<HTMLElement> {
 // Default navigation links
 const defaultNavigationLinks: Navbar02NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "products", label: "Products" },
+  { href: "/products", label: "Products" },
 
   {
     label: "Categories",
@@ -242,23 +243,23 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
                               <ul>
                                 {link.items?.map((item, itemIndex) => (
                                   <li key={itemIndex}>
-                                    <button
-                                      onClick={(e) => e.preventDefault()}
+                                    <Link
+                                      to={item.href}
                                       className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
                                     >
                                       {item.label}
-                                    </button>
+                                    </Link>
                                   </li>
                                 ))}
                               </ul>
                             </>
                           ) : (
-                            <button
-                              onClick={(e) => e.preventDefault()}
+                            <Link
+                              to={link.href as string}
                               className="flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer no-underline"
                             >
                               {link.label}
-                            </button>
+                            </Link>
                           )}
                           {/* Add separator between different types of items */}
                           {index < navigationLinks.length - 1 &&
@@ -392,9 +393,11 @@ export const Navbar02 = React.forwardRef<HTMLElement, Navbar02Props>(
           </div>
           {/* Right side */}
           <div className="flex items-center gap-3">
+            <SearchBar />
             <ModeToggle />
             <div className="relative">
-              <Button onClick={()=> navigate('/checkout')}
+              <Button
+                onClick={() => navigate("/checkout")}
                 variant="secondary"
                 size={"icon"}
                 className="rounded-full"
