@@ -23,14 +23,14 @@ npm run dev
 
 ## 🍽️ Technologies & Libraries
 
-* **TypeScript**: Type safety & fewer runtime errors
-* **Tailwind CSS**: Responsive design & utility-first styling
-* **Shadcn UI**: Reusable React components
-* **React Router DOM**: Navigation and routing
-* **React Hook Form**: Form state management
-* **React Context API**: Global state management
-* **Zod**: Form schema validation
-* **Embla Carousel Autoplay**: Product carousel with autoplay feature
+- **TypeScript**: Type safety & fewer runtime errors
+- **Tailwind CSS**: Responsive design & utility-first styling
+- **Shadcn UI**: Reusable React components
+- **React Router DOM**: Navigation and routing
+- **React Hook Form**: Form state management
+- **React Context API**: Global state management
+- **Zod**: Form schema validation
+- **Embla Carousel Autoplay**: Product carousel with autoplay feature
 
 ---
 
@@ -53,42 +53,64 @@ src/
 
 ## 🎨 Features
 
-* **Homepage**
+- **Homepage**
 
-  * Promotion carousel
-  * Recommended products section
-  * Categories overview
+  - Promotion carousel
+  - Recommended products section
+  - Categories overview
 
-* **Products Page**
+- **Products Page**
 
-  * List of products with filtering (price, rating) and sorting
-  * Product cards with image, price, rating, discount
+  - List of products with filtering (price, rating) and sorting
+  - Product cards with image, price, rating, discount
 
-* **Product Detail Page**
+- **Product Detail Page**
 
-  * Detailed product information
-  * Recommended products by category
-  * Add to cart functionality
+  - Detailed product information
+  - Recommended products by category
+  - Add to cart functionality
 
-* **Cart & Checkout**
+- **Cart & Checkout**
 
-  * Add/remove items
-  * Quantity management
-  * Checkout summary
+  - Add/remove items
+  - Quantity management
+  - Checkout summary
 
-* **User Authentication**
+- **User Authentication**
 
-  * Login and signup forms with validation
-  * User state management via Context API
+  - Login and signup forms with validation
+  - User state management via Context API
 
-* **Navigation & Responsiveness**
+- **Navigation & Responsiveness**
 
-  * Mobile-friendly hamburger menu
-  * Desktop multi-level navigation menu
-  * Cart badge with item count
-  * Fully responsive design
+  - Mobile-friendly hamburger menu
+  - Desktop multi-level navigation menu
+  - Cart badge with item count
+  - Fully responsive design
 
+---
 
+- **screenshots**
+
+## 🏠 Page d’accueil
+
+![Homepage Screenshot](./assets/home.png)
+
+## 🛒 Page des produits
+
+![Products Screenshot](./assets/Products.png)
+
+## 💳 Page du panier
+
+![Cart Screenshot](./assets/panier.png)
+
+## 💳 Page du Signup
+
+![SignUp Screenshot](./assets/Signup.png)
+
+## 💳 Page du login
+
+![Login Screenshot](./assets/login.png)
 
 ---
 
@@ -100,13 +122,13 @@ The app uses **mock data** from `dev-data.ts`:
 export const products = [
   {
     id: 1,
-    name: "Apple iMac 27\"",
+    name: 'Apple iMac 27"',
     price: 1699,
     discount: "Up to 35% off",
     rating: 4,
     category: "Electronics",
     image: "/assets/imac.png",
-    badges: ["New", "Hot"]
+    badges: ["New", "Hot"],
   },
   // ...more products
 ];
@@ -116,7 +138,7 @@ export const categories = [
   "Clothing",
   "Books",
   "Toys",
-  "Accessories"
+  "Accessories",
 ];
 ```
 
@@ -150,11 +172,10 @@ npm run dev
 
 ## 🎟 Future Improvements
 
-* Backend integration for real products, users, and orders
-* Payment gateway integration (Stripe, PayPal)
-* Wishlist & user profile management
-* Enhanced animations & transitions for better UX
-
+- Backend integration for real products, users, and orders
+- Payment gateway integration (Stripe, PayPal)
+- Wishlist & user profile management
+- Enhanced animations & transitions for better UX
 
 ---
 
